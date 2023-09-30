@@ -1,66 +1,94 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p align="center" style="background-color: #fff; padding: 15px;">
+    <a href="https://www.silabuz.com" target="_blank">
+        <img src="https://uploads-ssl.webflow.com/6320941e9612f79b0e2f61b1/6323907bc8e11a0e29d81559_logoprueba.svg" width="600" alt="Silabuz">
+    </a>
 </p>
 
-## About Laravel
+## About this API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This API was developed as a technical challenge for the recruitment process by Silabuz.com, it was used:
+- **[Laravel 10](https://laravel.com/docs/10.x)**
+- **[Guzzle](https://docs.guzzlephp.org/en/stable/)**
+- **[Passport](https://laravel.com/docs/10.x/passport)**
+- **[Postman](https://documenter.getpostman.com/view/1866863/2s9YJaZ4Uw)**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This API queries an album and an artist by their ID from the Deezer API, and can also search for artists, albums, tracks, etc, to consume the tracks of this API, it is necessary to be registered and logged in the same API.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Instalation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clone the repository
+```git
+git clone https://github.com/danteCortes/silabuz.git
+```
+2. Enter the newly cloned project
+```
+cd silabuz
+```
+3. Install the composer packages.
+```
+composer install
+```
+4. Copy the .env.example file
+```
+cp .env.example .env
+```
+5. Configure the database environment variables in the .env file.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravelchallenge
+DB_USERNAME=root
+DB_PASSWORD=1234
+```
+6. Execute the migrations to create the tables in the database.
+```
+php artisan migrate
+```
+7. Set the environment variable for the passport token in the .env file.
+```
+PASSPORT_TOKEN_NAME=silabuz
+```
+8. install the passport client.
+```
+php artisan passport:install
+```
+9.  Set the environment variable for the Deezer API path in the .env file.
+```
+DEEZER_ENDPOINT=https://api.deezer.com
+```
+10. Generate laravel application key.
+```
+php artisan key:generate
+```
+11. Start the laravel application.
+```
+php artisan serve
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Postman documentacion
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The documentation of the routes is published in **Postman** in the following link:
+[https://documenter.getpostman.com/view/1866863/2s9YJaZ4Uw](https://documenter.getpostman.com/view/1866863/2s9YJaZ4Uw)
 
-## Laravel Sponsors
+<div align="center">
+<img src="./public/Postman%20documentation.png" width="75%" alt="Postman documentation" />
+</div>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Author
 
-### Premium Partners
+<div align='center'>
+  <img height='250' src='./public/perfil.jpg' alt="Dante Cortés" />
+  <h1>Dante Esteban Cortés Ganoza</h1>
+</div>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Hello, my name is **Dante Esteban Cortés Ganoza**, I am a full Stack Developer with 9 years of experience developing different web applications, from point of sale for stores to electronic billing systems and systems for educational institutions, My experience in backend Developer is 10 years with PHP and its frameworks Laravel and Symfony in addition to developing small API's with Node.js. And my experience in frontend Developer is from 7 years ago starting with Vue, React and lately with Angular. The databases I managed are MySQL, SQL Server, PostgreSQL and Mongo DB. All the projects I worked on were deployed on virtual servers with Ubuntu server by myself, these servers are usually from digital ocean, heroku, AWS and once I used an Azure application for deployment.
 
-## Contributing
+I hope to deliver a product up to your expectations and to be considered for the end of the recruitment process for the Backend Developer vacancy.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+It was a fun challenge, and although I did not get to complete everything I wanted to implement, I am glad that the application is functional and, most of all, to have participated in this challenge. I thank you very much for taking me into account up to this point in the recruitment process and I look forward to working with you, this challenge showed me the professionalism with which you are used to work and I am excited about all the experience I will be able to absorb thanks to your work culture.
 
-## Code of Conduct
+Again, Thank you silabuz.com for the opportunity.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Best regards, Dante Cortés.
